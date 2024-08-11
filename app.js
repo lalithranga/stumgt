@@ -45,27 +45,19 @@ let tblbody = "";
 
 fetch("http://localhost:8080/get_data")
     .then(res => res.json())
-    .then(data => (data.forEach(element => {
-        console.log(data);
-        tblbody += `
-
-
-       
-   
-      <tr>
-      <td style="width: 3cm;>${element.name}</td>
-      <td >${element.age}</td>
-      <td>${element.subject}</td>
-      <td>${element.subject1}</td>
-      
-      
-      </tr>`
-      Idtable.innerHTML = tblbody 
-
-           
+    .then(data => {
+        let tblbody = '';
+        data.forEach(element => {
+            tblbody += `
+                <tr>
+                    <td>${element.name}</td>
+                    <td>${element.age}</td>
+                    <td>${element.subject}</td>
+                    <td>${element.subject1}</td>
+                </tr>`;
+        });
+        document.getElementById("tblbody").innerHTML = tblbody;
     })
- 
-   
-))
+    .catch(error => console.error('Error fetching data:', error));
     
 }

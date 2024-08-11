@@ -12,3 +12,16 @@
 
 
 } */
+#myTable {
+    border-collapse: collapse;
+    width: 100%; /* This makes the table width 100% of its container */
+}
+
+#myTable th, #myTable td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+#myTable td {
+    width: 3cm; /* This sets the width of the table cells */
+}
